@@ -11,7 +11,7 @@ class DockingStation
 
   def bike_available?
     if !@bike == true
-      raise "no bike in the dock"
+      raise "Sorry, no bike in the dock"
     end
   end
 
