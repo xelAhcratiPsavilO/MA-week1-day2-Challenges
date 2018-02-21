@@ -8,4 +8,5 @@ describe DockingStation do
   it { expect(subject.release_bike.working?).to eq true }
   it { should respond_to(:dock).with(1).argument }
   it { expect(subject.dock(bike)).to eq bike }
+  it { expect { subject.bike_available? }.to raise_error("no bike in the dock") }
 end
