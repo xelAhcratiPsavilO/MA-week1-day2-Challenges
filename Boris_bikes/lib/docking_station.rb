@@ -2,22 +2,15 @@ class DockingStation
   attr_reader :bike
   attr_reader :arr
 
+  def initialize
+    @arr = []
+  end
+
   def release_bike
     Bike.new
   end
 
-  def getting_storage
-    arr = []
-    @arr = arr
-  end
-
-  def bike
-    @bike = bike
-  end
-
   def dock(bike)
-    bike
-    getting_storage
     if @arr.length < 20
       @arr.push(bike)
       puts "This bike is now in the station"
@@ -29,7 +22,6 @@ class DockingStation
   end
 
   def bike_available?
-    getting_storage
     if @arr.length == 0
       raise "Sorry, no bike in the dock"
     else
