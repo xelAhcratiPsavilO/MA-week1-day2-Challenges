@@ -1,5 +1,4 @@
 class DockingStation
-  attr_reader :bike
   attr_reader :arr
 
   def initialize
@@ -10,15 +9,18 @@ class DockingStation
     Bike.new
   end
 
-  def dock(bike)
+  def full?
     if @arr.length < 20
-      @arr.push(bike)
-      puts "This bike is now in the station"
-      p @arr
+      false
     else
-      puts "Sorry, the capacity of the station was already filled"
-      p @arr
+      true
     end
+  end
+
+  def dock(bike)
+    fail "Sorry, the capacity of the station was already filled" if full?
+    @arr.push(bike)
+    puts "This bike is now in the station"
   end
 
   def bike_available?
