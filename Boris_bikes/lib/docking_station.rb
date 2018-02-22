@@ -21,6 +21,7 @@ class DockingStation
     fail "Sorry, the capacity of the station was already filled" if full?
     @arr.push(bike)
     puts "This bike is now in the station"
+    @arr
   end
 
   def bike_available?
