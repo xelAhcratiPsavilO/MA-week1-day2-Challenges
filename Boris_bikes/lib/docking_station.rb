@@ -17,6 +17,7 @@ class DockingStation
 
   def dock(bike)
     bike
+    getting_storage
     if @arr.length < 20
       @arr.push(bike)
       puts "This bike is now in the station"
@@ -28,6 +29,7 @@ class DockingStation
   end
 
   def bike_available?
+    getting_storage
     if @arr.length == 0
       raise "Sorry, no bike in the dock"
     else
