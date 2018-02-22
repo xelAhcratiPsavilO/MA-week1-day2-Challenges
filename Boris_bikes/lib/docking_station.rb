@@ -17,7 +17,7 @@ class DockingStation
 
   def dock(bike)
     bike
-    if @arr.length == 0 || @arr.length == 1
+    if @arr.length < 20
       @arr.push(bike)
       puts "This bike is now in the station"
       p @arr
@@ -31,7 +31,7 @@ class DockingStation
     if @arr.length == 0
       raise "Sorry, no bike in the dock"
     else
-      raise "Yes, you can get a bike"
+      puts "Yes, you can get a bike"
     end
   end
 
