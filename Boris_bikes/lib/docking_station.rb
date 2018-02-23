@@ -2,8 +2,9 @@ class DockingStation
   attr_reader :arr
   DEFAULT_CAPACITY = 20
 
-  def initialize
+  def initialize(capacity = DEFAULT_CAPACITY)
     @arr = []
+    @capacity = capacity
   end
 
   def empty?
@@ -15,7 +16,7 @@ class DockingStation
   end
 
   def full?
-    if @arr.length < DEFAULT_CAPACITY
+    if @arr.length < @capacity
       false
     else
       true
