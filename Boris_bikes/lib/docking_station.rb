@@ -5,8 +5,12 @@ class DockingStation
     @arr = []
   end
 
-  def release_bike
-    Bike.new
+  def empty?
+    if @arr.length == 0
+      true
+    else
+      false
+    end
   end
 
   def full?
@@ -24,12 +28,10 @@ class DockingStation
     @arr
   end
 
-  def bike_available?
-    if @arr.length == 0
-      raise "Sorry, no bike in the dock"
-    else
-      puts "Yes, you can get a bike"
-    end
+  def release_bike
+    fail "Sorry, no bike in the dock" if empty?
+    puts "Yes, you can get a bike"
+    Bike.new
   end
 
 end
@@ -40,7 +42,7 @@ class Bike
   end
 end
 
-station = DockingStation.new
-redbike = station.release_bike
-bluebike = station.release_bike
-yellowbike = station.release_bike
+# station = DockingStation.new
+# redbike = Bike.new
+# station.dock(redbike)
+# station.release_bike
